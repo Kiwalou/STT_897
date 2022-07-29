@@ -20,11 +20,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy(effects.spray, 500)
+    music.smallCrash.play()
     info.changeScoreBy(1)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     otherSprite.destroy()
     scene.cameraShake(4, 500)
+    music.wawawawaa.play()
     info.changeLifeBy(-1)
 })
 let bogey: Sprite = null
